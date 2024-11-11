@@ -8,7 +8,8 @@ async function buscarPersonagemENave(idPersonagem) {
             const nave = await respostaNave.json();
 
             const tripulacao = parseInt(nave.crew);
-            if (tripulacao > 100) {
+            const populacaoGrande = 100;
+            if (tripulacao > populacaoGrande) {
                 console.log(`A nave ${nave.name} é considerada grande com ${tripulacao} tripulantes.`);
             } else {
                 console.log(`A nave ${nave.name} é pequena com ${tripulacao} tripulantes.`);
@@ -18,7 +19,7 @@ async function buscarPersonagemENave(idPersonagem) {
         }
 
     } catch (erro) {
-        console.error('Erro ao buscar o personagem ou sua nave:', erro);
+        console.error("Erro ao buscar o personagem ou sua nave:", erro);
     }
 }
 
